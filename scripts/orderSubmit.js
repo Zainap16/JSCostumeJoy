@@ -12,7 +12,9 @@ function submitOrder() {
     queryString = queryString.slice(0, -1);
 
     // Redirect to the orderSubmit.html page with the query string
-    window.location.href = '../html/orderSubmit.html';
+    // window.location.href = '../html/orderSubmit.html';
+    window.location.href = './html/orderSubmit.html'  + queryString;
+
 }
 
 function getQueryStringParams(query) {
