@@ -14,7 +14,20 @@
         <a href="./index.html"><img src="./images/please-be-the-final-one-finale-of-final-removebg-preview.png" alt="CostumeJoy" ></a>
        
     </header>
-
+<style>
+    .product-details {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+     }
+     
+     .product-details.active {
+        display: block;
+        max-height: 300px; /* Adjust as necessary */
+     }
+     
+</style>
     <nav>	
 		<ul>
 			<li><a href="index.html">Home </a></li>
@@ -29,21 +42,20 @@
     
            <div class="container"> 
             <div class="products">
-                <img src="./images/bloop1.png" class="round">
-                <dl>
+                <img src="./images/bloop1.png" class="round product-image">
+                <dl class="product-details">
                     <dt>Harry Potter</dt>
                     <dd>Price changes depending on kids/adults</dd>
-                    <dd>Price:R 550+ </dd>
-                    <label>Interested?Buy me!
+                    <dd>Price: R 550+</dd>
+                    <label>Interested? Buy me!
                         <input type="checkbox" name="harry-potter" value="550">
                     </label>
-                    
                 </dl>
             </div>
 
             <div class="products">
                 <img src="./images/product_2.png" class="round">
-                <dl>
+                <dl class="product-details">
                     <dt>Princess Dress</dt>
                     <dd>Price changes depending on kids/adults</dd>
                     <dd>Price:R 550+ </dd>
@@ -56,7 +68,7 @@
 
             <div class="products">
                 <img src="./images/product-3.png"  class="round">
-                <dl>
+                <dl class="product-details">
                     <dt>Spiderman</dt>
                     <dd>Price changes depending on kids/adults</dd>
                     <dd>Price:R 350+ </dd>
@@ -68,7 +80,7 @@
 
             <div class="products">
                 <img src="./images/product-4.png"  class="round">
-                <dl>
+                <dl class="product-details">
                     <dt>Costume</dt>
                     <dd>Price changes depending on kids/adults</dd>
                     <dd>Price:R 750+ </dd>
@@ -79,7 +91,7 @@
             </div>
                 <div class="products">
                     <img src="./images/product-5.png" class="round" >
-                    <dl>
+                    <dl class="product-details">
                         <dt>Cheerleader Wear</dt>
                     <dd>Price changes depending on kids/adults</dd>
                     <dd>Price: R 650+</dd>
@@ -91,7 +103,7 @@
 
                 <div class="products">
                     <img src="./images/product-6.png" class="round" >
-                    <dl>
+                    <dl class="product-details">
                         <dt>Costume</dt>
                         <dd>Price changes depending on kids/adults</dd>
                         <dd>Price: R 800</dd>
@@ -116,5 +128,26 @@
 		<p><span>&#x2709;</span><a href="mailto:Costumejoy@outlook.com">Costumejoy@outlook.com</a></p>
         <p>&copy; Copyright 2024. All Rights Reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const productImages = document.querySelectorAll('.product-image');
+        
+            productImages.forEach(image => {
+                image.addEventListener('click', function () {
+                    const details = this.nextElementSibling; // Select the sibling dl (product details)
+                    
+                    // Toggle the 'active' class
+                    if (details.classList.contains('active')) {
+                        details.classList.remove('active');
+                        details.style.maxHeight = '0'; // Collapse the details
+                    } else {
+                        details.classList.add('active');
+                        details.style.maxHeight = details.scrollHeight + 'px'; // Expand the details
+                    }
+                });
+            });
+        });
+        
+    </script>
 </body>
 </html>
