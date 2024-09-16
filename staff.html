@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Directory</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      img {
+        max-width: 100px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Staff Directory</h1>
+    <table id="staff-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Staff Number</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Job Description</th>
+          <th>Work Phone Number</th>
+          <th>Work Email Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Staff data will be inserted here -->
+      </tbody>
+    </table>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("staff.json")
+          .then((response) => response.json())
+          .then((staff) => {
+            const tableBody = document.querySelector("#staff-table tbody");
+
+            staff.forEach((member) => {
+              const row = document.createElement("tr");
+
+              row.innerHTML = `
+                            <td><img src="${member.image}" alt="${member.firstName} ${member.lastName}"></td>
+                            <td>${member.staffNumber}</td>
+                            <td>${member.firstName}</td>
+                            <td>${member.lastName}</td>
+                            <td>${member.jobDescription}</td>
+                            <td>${member.workPhoneNumber}</td>
+                            <td>${member.workEmailAddress}</td>
+                        `;
+
+              tableBody.appendChild(row);
+            });
+          })
+          .catch((error) =>
+            console.error("Error loading the staff data:", error)
+          );
+      });
+    </script>
+  </body>
+</html>

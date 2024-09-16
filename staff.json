@@ -1,0 +1,92 @@
+[
+    {
+        "staffNumber": "001",
+        "firstName": "John",
+        "lastName": "Doe",
+        "jobDescription": "Manager",
+        "workPhoneNumber": "+27 123 456 789",
+        "workEmailAddress": "john.doe@example.com",
+        "image": "./images/john_doe.jpg"
+    },
+    {
+        "staffNumber": "002",
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "jobDescription": "Assistant Manager",
+        "workPhoneNumber": "+27 987 654 321",
+        "workEmailAddress": "jane.smith@example.com",
+        "image": "./images/jane_smith.jpg"
+    },
+    {
+        "staffNumber": "003",
+        "firstName": "Robert",
+        "lastName": "Brown",
+        "jobDescription": "Sales Executive",
+        "workPhoneNumber": "+27 654 321 987",
+        "workEmailAddress": "robert.brown@example.com",
+        "image": "./images/robert_brown.jpg"
+    },
+    {
+        "staffNumber": "004",
+        "firstName": "Emily",
+        "lastName": "Jones",
+        "jobDescription": "Marketing Specialist",
+        "workPhoneNumber": "+27 321 654 987",
+        "workEmailAddress": "emily.jones@example.com",
+        "image": "./images/emily_jones.jpg"
+    },
+    {
+        "staffNumber": "005",
+        "firstName": "Michael",
+        "lastName": "Williams",
+        "jobDescription": "Accountant",
+        "workPhoneNumber": "+27 987 123 456",
+        "workEmailAddress": "michael.williams@example.com",
+        "image": "./images/michael_williams.jpg"
+    },
+    {
+        "staffNumber": "006",
+        "firstName": "Sarah",
+        "lastName": "Wilson",
+        "jobDescription": "HR Manager",
+        "workPhoneNumber": "+27 123 789 456",
+        "workEmailAddress": "sarah.wilson@example.com",
+        "image": "./images/sarah_wilson.jpg"
+    },
+    {
+        "staffNumber": "007",
+        "firstName": "David",
+        "lastName": "Taylor",
+        "jobDescription": "Customer Service",
+        "workPhoneNumber": "+27 456 123 789",
+        "workEmailAddress": "david.taylor@example.com",
+        "image": "./images/david_taylor.jpg"
+    },
+    {
+        "staffNumber": "008",
+        "firstName": "Laura",
+        "lastName": "Anderson",
+        "jobDescription": "IT Support",
+        "workPhoneNumber": "+27 321 987 654",
+        "workEmailAddress": "laura.anderson@example.com",
+        "image": "./images/laura_anderson.jpg"
+    },
+    {
+        "staffNumber": "009",
+        "firstName": "Daniel",
+        "lastName": "Thomas",
+        "jobDescription": "Warehouse Manager",
+        "workPhoneNumber": "+27 654 987 321",
+        "workEmailAddress": "daniel.thomas@example.com",
+        "image": "./images/daniel_thomas.jpg"
+    },
+    {
+        "staffNumber": "010",
+        "firstName": "Jessica",
+        "lastName": "White",
+        "jobDescription": "Product Manager",
+        "workPhoneNumber": "+27 789 654 123",
+        "workEmailAddress": "jessica.white@example.com",
+        "image": "./images/jessica_white.jpg"
+    }
+]

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration Form</title>
+    <link rel="stylesheet" href="../style/clientRegistrationForm.css">
+    <script src="../scripts/lastVisited.js" defer></script>
+    
+   
+    
+    <!-- <script src="./script_finale.js" defer ></script> -->
+</head>
+<body>
+   <form id="client-info-form">
+      <p id="lastVisited"></p>
+      <h1>Client Information Form</h1>
+      <img src="../images/please-be-the-final-one-finale-of-final-removebg-preview.png" alt="logo">
+      <label for="preferred-name">Preferred Name:</label>
+      <input type="text" id="preferred-name" name="preferred-name" value="Zainap" required>
+
+      <label for="full-name">Client Full Names (as on ID):</label>
+      <input type="text" id="full-name" name="full-name"  value="Zainap" required>
+
+      <label for="surname">Surname:</label>
+      <input type="text" id="surname" name="surname" value="Zainap" required>
+<!-- password -->
+<label for="password">Password: </label>
+<input type="text" id="password" name="password" value="p@ssworD1" required>
+<span id="passwordMessage" style="color: red;"></span>
+      <label for="id-number">ID Number:</label>
+      <input type="text" id="id-number" name="id-number" required pattern="^\d{13}$" value="1234567891012">
+
+      <label for="telephone-work">Telephone (Work):</label>
+      <input type="tel" id="telephone-work" name="telephone-work" required pattern="^\d{10}$" value="1234567890" > 
+
+      <label for="cellphone-number">Cellphone Number:</label>
+      <input type="tel" id="cellphone-number" name="cellphone-number" required pattern="^\d{10}$" value="1234567890">
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required value="z@gmail.com">
+
+      <label for="home-address">Home Address:</label>
+      <textarea id="home-address" name="home-address" required></textarea>
+
+      <label for="postal-address">Postal Address:</label>
+      <textarea id="postal-address" name="postal-address"></textarea>
+      <input type="checkbox" id="copy-address" onclick="copyAddress()"> Copy Home Address to Postal Address
+
+      <label for="referral">Where did the client hear about us?</label>
+      <select id="referral" name="referral" required>
+          <option value="word-of-mouth">Word of Mouth</option>
+          <option value="internet-search">Internet Search</option>
+          <option value="advertising">Advertising</option>
+          <option value="social-media">Social Media</option>
+      </select>
+
+      <label>Credit Card Name*</label>
+            <fieldset id="cards">
+               <label class="cardLabel">
+                  <input name="credit" value="amex" type="radio" required />               
+                  <span>American Express</span>
+               </label>
+               <label class="cardLabel">               
+                  <input name="credit" value="discover" type="radio" />
+                  <span>Discover</span>
+               </label>
+               <label class="cardLabel">                              
+                  <input name="credit" value="master" type="radio"  />
+                  <span>MasterCard</span>
+               </label>
+               <label class="cardLabel">                                    
+                  <input name="credit" value="visa" type="radio"  />
+                  <span>Visa</span>
+               </label>
+            </fieldset>        
+
+      <label for="cardNumber">Credit Card Number*</label>
+      <input name="cardNumber" id="cardNumber" required type="text"
+             pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" value="6011485077126974" />
+
+      <label for="expMonth">Expiration Date*</label>
+      <select id="expMonth" name="expMonth">
+         <option value="mm">mm</option>
+         <option value="01">01</option>
+         <option value="02">02</option>
+         <option value="03">03</option>
+         <option value="04">04</option>
+         <option value="05">05</option>
+         <option value="06">06</option>
+         <option value="07">07</option>
+         <option value="08">08</option>
+         <option value="09">09</option>
+         <option value="10">10</option>
+         <option value="11">11</option>
+         <option value="12">12</option>
+      </select>
+      <span id="separator"> / </span>
+      <select id="expYear" name="expYear">
+         <option value="yy">yy</option>
+         <option value="2024">2024</option>
+         <option value="2025">2025</option>
+         <option value="2026">2026</option>
+         <option value="2027">2027</option>
+         <option value="2028">2028</option>
+         <option value="2029">2029</option>
+      </select> 
+      <label for="cvc-number">CVC Number:</label>
+      <input type="text" id="cvc-number" name="cvc-number" required value="123" >
+
+      <p id="footnote">* - Required Item</p>        
+         <input type="submit" id="subButton" value="Submit Payment" />   
+
+       
+  </form>
+  <script src="../scripts/clientRegistrationForm.js" defer ></script>
+
+</body>
+</html>
+</body>
+</html>

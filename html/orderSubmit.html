@@ -1,0 +1,36 @@
+<!-- displayData.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+   
+</head>
+<body>
+    <h1>Display Data</h1>
+    <hr>
+    <div id="data-display"></div>
+
+    <h1>Order Summary</h1>
+    <ul id="orderSummary"></ul>
+    <script src="../scripts/orderSubmit.js" ></script>
+</body>
+</html>
+<script type="text/javascript">
+    // orderSubmit.js
+document.addEventListener('DOMContentLoaded', function() {
+    const data = JSON.parse(localStorage.getItem('clientData'));
+    const dataDisplay = document.getElementById('data-display');
+
+    if (data) {
+        for (const [key, value] of Object.entries(data)) {
+            const p = document.createElement('p');
+            p.textContent = `${key.replace(/-/g, ' ')}: ${value}`;
+            dataDisplay.appendChild(p);
+        }
+    } else {
+        dataDisplay.innerHTML = '<p>No data found. Please go back and fill out the form.</p>';
+    }
+});
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Payment Form</title>
+    <script src="../scripts/orderSubmit.js" defer ></script>
+</head>
+<body>
+    <h1>Client Payment Form</h1>
+    <div>
+        <strong>Client Preferred Name:</strong> <span id="client-preferred-name"></span>
+    </div>
+    <div>
+        <strong>Client Surname:</strong> <span id="client-surname"></span>
+    </div>
+    <div>
+        <strong>Name on Credit Card:</strong> <span id="card-name"></span>
+    </div>
+    <div>
+        <strong>Credit Card Type:</strong> <span id="card-type"></span>
+    </div>
+    <div>
+        <strong>Credit Card Number:</strong> <span id="card-number"></span>
+    </div>
+    <div>
+        <strong>Expiration Month/Year:</strong> <span id="exp-date"></span>
+    </div>
+    <div>
+        <strong>CVC Number:</strong> <span id="cvc"></span>
+    </div>
+    <div>
+        <strong>Total Due:</strong> <span id="total-due"></span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = JSON.parse(localStorage.getItem('clientData'));
+            
+            if (data) {
+                document.getElementById('client-preferred-name').textContent = data['preferred-name'] || '';
+                document.getElementById('client-surname').textContent = data['surname'] || '';
+                document.getElementById('card-name').textContent = data['full-name'] || ''; // Assuming 'full-name' is the name on the credit card
+                document.getElementById('card-type').textContent = data['credit'] || '';
+                document.getElementById('card-number').textContent = data['cardNumber'] || '';
+                document.getElementById('exp-date').textContent = (data['expMonth'] || '') + '/' + (data['expYear'] || '');
+                document.getElementById('cvc').textContent = data['cvc-number'] || '';
+            }
+
+            // Calculate total from order data
+            let total = 0;
+            const params = new URLSearchParams(window.location.search);
+            for (let i = 0; params.has(`name${i}`) && params.has(`price${i}`); i++) {
+                total += parseFloat(params.get(`price${i}`));
+            }
+            document.getElementById('total-due').textContent = `R ${total.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
